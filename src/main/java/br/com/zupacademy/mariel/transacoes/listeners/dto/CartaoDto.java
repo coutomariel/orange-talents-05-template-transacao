@@ -1,11 +1,11 @@
-package br.com.zupacademy.mariel.transacoes.domain;
+package br.com.zupacademy.mariel.transacoes.listeners.dto;
 
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.text.MessageFormat;
 
-public class Cartao {
+public class CartaoDto {
 
     @JsonProperty
     private String id;
@@ -13,7 +13,7 @@ public class Cartao {
     private String email;
 
     @JsonCreator
-    public Cartao(@JsonProperty("id") String id, @JsonProperty("email") String email) {
+    public CartaoDto(@JsonProperty("id") String id, @JsonProperty("email") String email) {
         this.id = id;
         this.email = email;
     }

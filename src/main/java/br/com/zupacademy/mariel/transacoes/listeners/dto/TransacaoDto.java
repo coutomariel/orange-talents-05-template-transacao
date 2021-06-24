@@ -1,4 +1,4 @@
-package br.com.zupacademy.mariel.transacoes.domain;
+package br.com.zupacademy.mariel.transacoes.listeners.dto;
 
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonProperty;
@@ -6,7 +6,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.math.BigDecimal;
 import java.time.LocalDateTime;
 
-public class Transacao {
+public class TransacaoDto {
 
     @JsonProperty
     private final BigDecimal valor;
@@ -16,14 +16,14 @@ public class Transacao {
     private final LocalDateTime efetivadaEm;
 
     @JsonProperty
-    private final Estabelecimento estabelecimento;
+    private final EstabelecimentoDto estabelecimento;
     @JsonProperty
-    private final Cartao cartao;
+    private final CartaoDto cartao;
 
     @JsonCreator
-    public Transacao(@JsonProperty("id") String id, @JsonProperty("valor") BigDecimal valor,
-                     @JsonProperty("efetivadaEm") LocalDateTime efetivadaEm, @JsonProperty("cartao") Cartao cartao,
-                     @JsonProperty("estabelecimento") Estabelecimento estabelecimento) {
+    public TransacaoDto(@JsonProperty("id") String id, @JsonProperty("valor") BigDecimal valor,
+                        @JsonProperty("efetivadaEm") LocalDateTime efetivadaEm, @JsonProperty("cartao") CartaoDto cartao,
+                        @JsonProperty("estabelecimento") EstabelecimentoDto estabelecimento) {
 
         this.valor = valor;
         this.id = id;
@@ -44,11 +44,11 @@ public class Transacao {
         return efetivadaEm;
     }
 
-    public Estabelecimento getEstabelecimento() {
+    public EstabelecimentoDto getEstabelecimento() {
         return estabelecimento;
     }
 
-    public Cartao getCartao() {
+    public CartaoDto getCartao() {
         return cartao;
     }
 

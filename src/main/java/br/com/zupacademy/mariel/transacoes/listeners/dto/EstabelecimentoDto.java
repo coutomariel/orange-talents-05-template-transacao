@@ -1,9 +1,9 @@
-package br.com.zupacademy.mariel.transacoes.domain;
+package br.com.zupacademy.mariel.transacoes.listeners.dto;
 
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
-public class Estabelecimento {
+public class EstabelecimentoDto {
 
     @JsonProperty
     private String nome;
@@ -13,8 +13,8 @@ public class Estabelecimento {
     private String endereco;
 
     @JsonCreator
-    public Estabelecimento(@JsonProperty("nome") String nome, @JsonProperty("cidade") String cidade,
-                           @JsonProperty("endereco") String endereco) {
+    public EstabelecimentoDto(@JsonProperty("nome") String nome, @JsonProperty("cidade") String cidade,
+                              @JsonProperty("endereco") String endereco) {
         this.nome = nome;
         this.cidade = cidade;
         this.endereco = endereco;
