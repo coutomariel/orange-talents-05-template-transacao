@@ -1,5 +1,6 @@
 package br.com.zupacademy.mariel.transacoes.listeners.dto;
 
+import br.com.zupacademy.mariel.transacoes.domain.entities.Transacao;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
@@ -52,4 +53,8 @@ public class TransacaoDto {
         return cartao;
     }
 
+    public Transacao toEntity() {
+        return new Transacao(efetivadaEm, valor, estabelecimento.getNome(), estabelecimento.getCidade(), estabelecimento.getEndereco(),
+                cartao.getId(), cartao.getEmail());
+    }
 }
