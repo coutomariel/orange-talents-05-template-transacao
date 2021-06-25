@@ -12,7 +12,7 @@ public class Transacao {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private String id;
+    private Long id;
 
     private LocalDateTime efetivadaEm;
     private BigDecimal valor;
@@ -33,4 +33,24 @@ public class Transacao {
         this.idCartao = idCartao;
         this.email = email;
     }
+
+    /**
+     * Construtor para uso exclusivo do hibernate
+     */
+    @Deprecated
+    public Transacao() {
+    }
+
+    public LocalDateTime getEfetivadaEm() {
+        return efetivadaEm;
+    }
+
+    public BigDecimal getValor() {
+        return valor;
+    }
+
+    public String getNomeEstabelecimento() {
+        return nomeEstabelecimento;
+    }
+
 }
